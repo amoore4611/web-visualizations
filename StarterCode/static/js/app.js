@@ -5,7 +5,7 @@ d3.json("samples.json").then(function(data){
   const dropDownMenu = d3.select("#selDataset")
   globalData = data;
   console.log(data);
-
+  
   var options = dropDownMenu.selectAll('option')
     .data(data.metadata)
     .enter()
@@ -68,9 +68,13 @@ function optionChanged() {
   
   Plotly.newPlot('bubble', bubbleData, layout);
 
-  d3.select('#meta_id').append('text').text("id: " + selectedMetaObject.id)
-  d3.select('#ethnicity').append('text').text("ethnicity: " + selectedMetaObject.ethnicity)
-  
+  d3.select('#meta_id').text("id: " + selectedMetaObject.id);
+  d3.select('#ethnicity').text("ethnicity: " + selectedMetaObject.ethnicity);
+  d3.select('#gender').text("gender: " + selectedMetaObject.gender);
+  d3.select('#age').text("age: " + selectedMetaObject.age);
+  d3.select('#location').text("location: " + selectedMetaObject.location);
+  d3.select('#type').text("bbtype: " + selectedMetaObject.bbtype);
+  d3.select('#wfeg').text("wfreq: " + selectedMetaObject.wfreq);
 };
 
 
