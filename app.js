@@ -24,19 +24,12 @@ function optionChanged() {
   selectedId = d3.select('#selDataset').property('value');
 
   const selectedObject = globalData.samples.find(element => element.id == selectedId);
-
   const selectedMetaObject = globalData.metadata.find(element => element.id == selectedId);
- 
   const selectedOtuIDString = selectedObject.otu_ids.slice(0, 10).map(x => "OTU "+x);
-  
   const selectedOtuID = selectedObject.otu_ids;
-
   const selectedSampleValue = selectedObject.sample_values.slice(0, 10);
-
   const selectedSampleValue1 = selectedObject.sample_values;
- 
   const selectedOtuLabel = selectedObject.otu_labels;
-
   const selectedMeta = d3.select('#sample-metadata')
 
   var data = [{
