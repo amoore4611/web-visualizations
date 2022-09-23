@@ -29,11 +29,13 @@ function optionChanged() {
  
   const selectedOtuIDString = selectedObject.otu_ids.slice(0, 10).map(x => "OTU "+x);
   
-  const selectedOtuID = selectedObject.otu_ids.slice(0, 10);
+  const selectedOtuID = selectedObject.otu_ids;
 
   const selectedSampleValue = selectedObject.sample_values.slice(0, 10);
+
+  const selectedSampleValue1 = selectedObject.sample_values;
  
-  const selectedOtuLabel = selectedObject.otu_labels.slice(0, 10);
+  const selectedOtuLabel = selectedObject.otu_labels;
 
   const selectedMeta = d3.select('#sample-metadata')
 
@@ -48,13 +50,13 @@ function optionChanged() {
 
   var trace1 = {
     x: selectedOtuID,
-    y: selectedSampleValue,
+    y: selectedSampleValue1,
     text: selectedOtuLabel,
     mode: 'markers',
     colorscale: "Earth",
     marker: {
       color: selectedOtuID,
-      size: selectedSampleValue
+      size: selectedSampleValue1
     }
   };
   
